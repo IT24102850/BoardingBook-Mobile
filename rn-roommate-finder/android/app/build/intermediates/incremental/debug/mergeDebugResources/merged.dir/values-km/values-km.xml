@@ -37,6 +37,13 @@
     <string name="bottomsheet_action_expand_halfway">ពង្រីក​ពាក់កណ្ដាល</string>
     <string name="bottomsheet_drag_handle_clicked">បានប៉ះដង​អូស​ពីរដង</string>
     <string name="bottomsheet_drag_handle_content_description">ដង​អូស</string>
+    <string msgid="881409763997275156" name="call_notification_answer_action">"ឆ្លើយ"</string>
+    <string msgid="8793775615905189152" name="call_notification_answer_video_action">"វីដេអូ"</string>
+    <string msgid="3229508546291798546" name="call_notification_decline_action">"បដិសេធ"</string>
+    <string msgid="2659457946726154263" name="call_notification_hang_up_action">"ដាក់​ចុះ"</string>
+    <string msgid="6107532579223922871" name="call_notification_incoming_text">"ការ​ហៅ​ចូល"</string>
+    <string msgid="8623827134497363134" name="call_notification_ongoing_text">"ការ​ហៅដែលកំពុងដំណើរការ"</string>
+    <string msgid="59049573811482460" name="call_notification_screening_text">"កំពុងពិនិត្យការ​ហៅ​ចូល"</string>
     <string gender="unknown" name="catalyst_dev_menu_header">ប្រតិកម្ម​ម៉ឺនុយ​​អភិវឌ្ឍដើម (%1$s)</string>
     <string gender="unknown" name="catalyst_dev_menu_sub_header">ដំណើរការ %1$s</string>
     <string name="character_counter_content_description">តួ​អក្សរ​បាន​បញ្ចូល​ %1$d នៃ %2$d</string>

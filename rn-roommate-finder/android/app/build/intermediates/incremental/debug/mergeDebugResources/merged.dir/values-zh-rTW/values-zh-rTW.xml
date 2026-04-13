@@ -37,6 +37,13 @@
     <string name="bottomsheet_action_expand_halfway">展開一半</string>
     <string name="bottomsheet_drag_handle_clicked">已輕觸兩下拖曳控點</string>
     <string name="bottomsheet_drag_handle_content_description">拖曳控點</string>
+    <string msgid="881409763997275156" name="call_notification_answer_action">"接聽"</string>
+    <string msgid="8793775615905189152" name="call_notification_answer_video_action">"視訊"</string>
+    <string msgid="3229508546291798546" name="call_notification_decline_action">"拒接"</string>
+    <string msgid="2659457946726154263" name="call_notification_hang_up_action">"掛斷"</string>
+    <string msgid="6107532579223922871" name="call_notification_incoming_text">"來電"</string>
+    <string msgid="8623827134497363134" name="call_notification_ongoing_text">"通話中"</string>
+    <string msgid="59049573811482460" name="call_notification_screening_text">"正在過濾來電"</string>
     <string gender="unknown" name="catalyst_dev_menu_header">React Native 開發人員功能表(%1$s)</string>
     <string gender="unknown" name="catalyst_dev_menu_sub_header">正在執行%1$s</string>
     <string name="character_counter_content_description">已輸入 %1$d 個字元 (上限為 %2$d 個字元)</string>
@@ -122,4 +129,9 @@
     <string gender="unknown" name="tablist_description">頁籤清單</string>
     <string gender="unknown" name="timer_description">計時器</string>
     <string gender="unknown" name="toolbar_description">工具列</string>
+    <string name="ucrop_error_input_data_is_absent">必須指定輸入以及輸出的 Uri</string>
+    <string name="ucrop_label_edit_photo">裁切</string>
+    <string name="ucrop_label_original">原始比例</string>
+    <string name="ucrop_menu_crop">裁切</string>
+    <string name="ucrop_mutate_exception_hint">在你的 App 內覆寫顏色資源檔 (ucrop_color_toolbar_widget) 使 5.0 以前裝置正常運作</string>
 </resources>

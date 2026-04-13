@@ -564,6 +564,8 @@
     <color name="bright_foreground_material_light">@android:color/black</color>
     <color name="button_material_dark">#ff5a595b</color>
     <color name="button_material_light">#ffd6d7d7</color>
+    <color name="call_notification_answer_color">#1d873b</color>
+    <color name="call_notification_decline_color">#d93025</color>
     <color name="cardview_dark_background">#FF424242</color>
     <color name="cardview_light_background">#FFFFFFFF</color>
     <color name="cardview_shadow_end_color">#03000000</color>
@@ -874,6 +876,30 @@
     <color name="switch_thumb_normal_material_light">#fff1f1f1</color>
     <color name="tooltip_background_dark">#e6616161</color>
     <color name="tooltip_background_light">#e6FFFFFF</color>
+    <color name="ucrop_color_active_aspect_ratio">@color/ucrop_color_blaze_orange</color>
+    <color name="ucrop_color_active_controls_color">@color/ucrop_color_blaze_orange</color>
+    <color name="ucrop_color_black">#000</color>
+    <color name="ucrop_color_blaze_orange">#FF6300</color>
+    <color name="ucrop_color_crop_background">@color/ucrop_color_black</color>
+    <color name="ucrop_color_default_crop_frame">#ffffff</color>
+    <color name="ucrop_color_default_crop_grid">#80ffffff</color>
+    <color name="ucrop_color_default_dimmed">#8c000000</color>
+    <color name="ucrop_color_default_logo">#4f212121</color>
+    <color name="ucrop_color_ebony_clay">#20242F</color>
+    <color name="ucrop_color_heather">#B3BECE</color>
+    <color name="ucrop_color_inactive_aspect_ratio">@color/ucrop_color_ebony_clay</color>
+    <color name="ucrop_color_inactive_controls_color">@color/ucrop_color_heather</color>
+    <color name="ucrop_color_progress_wheel_line">@color/ucrop_color_ebony_clay</color>
+    <color name="ucrop_color_statusbar">#f5f5f5</color>
+    <color name="ucrop_color_toolbar">@color/ucrop_color_white</color>
+    <color name="ucrop_color_toolbar_widget">@color/ucrop_color_black</color>
+    <color name="ucrop_color_white">#FFF</color>
+    <color name="ucrop_color_widget">@color/ucrop_color_black</color>
+    <color name="ucrop_color_widget_active">@color/ucrop_color_white</color>
+    <color name="ucrop_color_widget_background">@color/ucrop_color_ebony_clay</color>
+    <color name="ucrop_color_widget_rotate_angle">@color/ucrop_color_ebony_clay</color>
+    <color name="ucrop_color_widget_rotate_mid_line">@color/ucrop_color_blaze_orange</color>
+    <color name="ucrop_color_widget_text">@color/ucrop_color_blaze_orange</color>
     <dimen name="abc_action_bar_content_inset_material">16dp</dimen>
     <dimen name="abc_action_bar_content_inset_with_nav">72dp</dimen>
     <dimen name="abc_action_bar_default_height_material">56dp</dimen>
@@ -1636,7 +1662,7 @@
     <dimen name="notification_main_column_padding_top">10dp</dimen>
     <dimen name="notification_media_narrow_margin">@dimen/notification_content_margin_start</dimen>
     <dimen name="notification_right_icon_size">16dp</dimen>
-    <dimen name="notification_right_side_padding_top">2dp</dimen>
+    <dimen name="notification_right_side_padding_top">4dp</dimen>
     <dimen name="notification_small_icon_background_padding">3dp</dimen>
     <dimen name="notification_small_icon_size_as_large">24dp</dimen>
     <dimen name="notification_subtext_size">13sp</dimen>
@@ -1650,6 +1676,28 @@
     <dimen name="tooltip_vertical_padding">6.5dp</dimen>
     <dimen name="tooltip_y_offset_non_touch">0dp</dimen>
     <dimen name="tooltip_y_offset_touch">16dp</dimen>
+    <dimen name="ucrop_default_crop_frame_stoke_width">1dp</dimen>
+    <dimen name="ucrop_default_crop_grid_stoke_width">1dp</dimen>
+    <dimen name="ucrop_default_crop_logo_size">200dp</dimen>
+    <dimen name="ucrop_default_crop_rect_corner_touch_area_line_length">10dp</dimen>
+    <dimen name="ucrop_default_crop_rect_corner_touch_threshold">30dp</dimen>
+    <dimen name="ucrop_default_crop_rect_min_size">100dp</dimen>
+    <dimen name="ucrop_height_crop_aspect_ratio_text">40dp</dimen>
+    <dimen name="ucrop_height_divider_shadow">3dp</dimen>
+    <dimen name="ucrop_height_horizontal_wheel_progress_line">20dp</dimen>
+    <dimen name="ucrop_height_wrapper_controls">64dp</dimen>
+    <dimen name="ucrop_height_wrapper_states">72dp</dimen>
+    <dimen name="ucrop_margin_horizontal_wheel_progress_line">10dp</dimen>
+    <dimen name="ucrop_margin_top_controls_text">4dp</dimen>
+    <dimen name="ucrop_margin_top_widget_text">10dp</dimen>
+    <dimen name="ucrop_padding_crop_frame">16dp</dimen>
+    <dimen name="ucrop_progress_size">30dp</dimen>
+    <dimen name="ucrop_size_dot_scale_text_view">8dp</dimen>
+    <dimen name="ucrop_size_wrapper_rotate_button">50dp</dimen>
+    <dimen name="ucrop_text_size_controls_text">11sp</dimen>
+    <dimen name="ucrop_text_size_widget_text">13sp</dimen>
+    <dimen name="ucrop_width_horizontal_wheel_progress_line">2dp</dimen>
+    <dimen name="ucrop_width_middle_wheel_progress_line">4dp</dimen>
     <item name="material_ic_keyboard_arrow_next_black_24dp" type="drawable">@drawable/material_ic_keyboard_arrow_right_black_24dp</item>
     <item name="material_ic_keyboard_arrow_previous_black_24dp" type="drawable">@drawable/material_ic_keyboard_arrow_left_black_24dp</item>
     <drawable name="notification_template_icon_bg">#3333B5E5</drawable>
@@ -1733,6 +1781,7 @@
     <item name="progress_circular" type="id"/>
     <item name="progress_horizontal" type="id"/>
     <item name="react_test_id" type="id"/>
+    <item name="report_drawn" type="id"/>
     <item name="role" type="id"/>
     <item name="row_index_key" type="id"/>
     <item name="save_non_transition_alpha" type="id"/>
@@ -1746,11 +1795,13 @@
     <item name="tag_accessibility_clickable_spans" type="id"/>
     <item name="tag_accessibility_heading" type="id"/>
     <item name="tag_accessibility_pane_title" type="id"/>
+    <item name="tag_compat_insets_dispatch" type="id"/>
     <item name="tag_on_apply_window_listener" type="id"/>
     <item name="tag_on_receive_content_listener" type="id"/>
     <item name="tag_on_receive_content_mime_types" type="id"/>
     <item name="tag_screen_reader_focusable" type="id"/>
     <item name="tag_state_description" type="id"/>
+    <item name="tag_system_bar_state_monitor" type="id"/>
     <item name="tag_transition_group" type="id"/>
     <item name="tag_unhandled_key_event_manager" type="id"/>
     <item name="tag_unhandled_key_listeners" type="id"/>
@@ -1776,6 +1827,7 @@
     <item name="view_offset_helper" type="id"/>
     <item name="view_tag_instance_handle" type="id"/>
     <item name="view_tag_native_id" type="id"/>
+    <id name="view_tree_disjoint_parent"/>
     <id name="view_tree_lifecycle_owner"/>
     <id name="view_tree_on_back_pressed_dispatcher_owner"/>
     <id name="view_tree_saved_state_registry_owner"/>
@@ -1850,6 +1902,7 @@
     <integer name="react_native_inspector_proxy_port">8081</integer>
     <integer name="show_password_duration">200</integer>
     <integer name="status_bar_notification_info_maxnum">999</integer>
+    <integer name="ucrop_progress_loading_anim_time">1500</integer>
     <plurals description="Plural form content description for number of new notifications [CHAR_LIMIT=NONE]" name="mtrl_badge_content_description">
     <item quantity="one"><ns2:g id="count">%d</ns2:g> new notification</item>
     <item quantity="other"><ns2:g id="count">%d</ns2:g> new notifications</item>
@@ -1891,6 +1944,13 @@
     <string description="A description of an action that a user of an accessibility service can perform to expand a bottomsheet halfway to its full height. [CHAR LIMIT=25]" name="bottomsheet_action_expand_halfway">Expand halfway</string>
     <string description="An accessibility feedback when the bottom sheet drag handle is clicked [CHAR LIMIT=NONE]" name="bottomsheet_drag_handle_clicked">Drag handle double-tapped</string>
     <string description="The content description of bottom sheet drag handles [CHAR LIMIT=NONE]" name="bottomsheet_drag_handle_content_description">Drag handle</string>
+    <string name="call_notification_answer_action">Answer</string>
+    <string name="call_notification_answer_video_action">Video</string>
+    <string name="call_notification_decline_action">Decline</string>
+    <string name="call_notification_hang_up_action">Hang Up</string>
+    <string name="call_notification_incoming_text">Incoming call</string>
+    <string name="call_notification_ongoing_text">Ongoing call</string>
+    <string name="call_notification_screening_text">Screening an incoming call</string>
     <string name="catalyst_change_bundle_location" project="catalyst" translatable="false">Change Bundle Location</string>
     <string name="catalyst_copy_button" project="catalyst" translatable="false">Copy\n</string>
     <string name="catalyst_debug_connecting" project="catalyst" translatable="false">Connecting to debugger...</string>
@@ -2075,6 +2135,14 @@
     <string description="container for a set of tabs" name="tablist_description">Tab List</string>
     <string description="a numerical counter listing the amount of elapsed time from a starting point or the remaining time until an end point" name="timer_description">Timer</string>
     <string description="a collection of commonly used function buttons or controls represented in a compact visual form" name="toolbar_description">Tool Bar</string>
+    <string name="ucrop_crop">Crop</string>
+    <string name="ucrop_error_input_data_is_absent" translatable="false">Both input and output Uri must be specified</string>
+    <string name="ucrop_label_edit_photo">Edit Photo</string>
+    <string name="ucrop_label_original">Original</string>
+    <string name="ucrop_menu_crop">Crop</string>
+    <string name="ucrop_mutate_exception_hint" translatable="false">Therefore, override color resource (ucrop_color_toolbar_widget) in your app to make it work on pre-L devices</string>
+    <string name="ucrop_rotate">Rotate</string>
+    <string name="ucrop_scale">Scale</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>
@@ -9156,6 +9224,53 @@
     <item name="android:textColor">#dddddd</item>
     <item name="android:textSize">14sp</item>
   </style>
+    <style name="ucrop_ImageViewWidgetIcon">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:duplicateParentState">true</item>
+    </style>
+    <style name="ucrop_TextViewCropAspectRatio">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/ucrop_height_crop_aspect_ratio_text</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:duplicateParentState">true</item>
+        <item name="android:textColor">@color/ucrop_scale_text_view_selector</item>
+    </style>
+    <style name="ucrop_TextViewWidget">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_marginTop">@dimen/ucrop_margin_top_controls_text</item>
+        <item name="android:textColor">@color/ucrop_color_widget_active</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/ucrop_text_size_controls_text</item>
+    </style>
+    <style name="ucrop_TextViewWidgetText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/ucrop_color_widget_text</item>
+        <item name="android:layout_marginTop">@dimen/ucrop_margin_top_widget_text</item>
+        <item name="android:textSize">@dimen/ucrop_text_size_widget_text</item>
+    </style>
+    <style name="ucrop_WrapperIconState">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:clickable">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+    <style name="ucrop_WrapperRotateButton">
+        <item name="android:layout_width">@dimen/ucrop_size_wrapper_rotate_button</item>
+        <item name="android:layout_height">@dimen/ucrop_size_wrapper_rotate_button</item>
+        <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
+        <item name="android:clickable">true</item>
+    </style>
     <declare-styleable name="ActionBar">
         
         <attr name="navigationMode">
@@ -10709,6 +10824,8 @@
         
         <attr format="string" name="fontProviderQuery"/>
         
+        <attr format="string" name="fontProviderFallbackQuery"/>
+        
         <attr format="reference" name="fontProviderCerts"/>
         
         <attr name="fontProviderFetchStrategy">
@@ -10719,7 +10836,7 @@
               default typeface will be used instead. -->
             <enum name="blocking" value="0"/>
             <!-- The async font fetch works as follows.
-              First, check the local cache, then if the requeted font is not cached, trigger a
+              First, check the local cache, then if the requested font is not cached, trigger a
               request the font and continue with layout inflation. Once the font fetch succeeds, the
               target text view will be refreshed with the downloaded font data. The
               fontProviderFetchTimeout will be ignored if async loading is specified. -->
@@ -12682,6 +12799,36 @@
         
         <attr name="android:inflatedId"/>
         <attr name="android:id"/>
+    </declare-styleable>
+    <declare-styleable name="ucrop_AspectRatioTextView">
+
+        <attr format="string" name="ucrop_artv_ratio_title"/>
+
+        <attr format="float" name="ucrop_artv_ratio_x"/>
+        <attr format="float" name="ucrop_artv_ratio_y"/>
+
+    </declare-styleable>
+    <declare-styleable name="ucrop_UCropView">
+
+        
+        <attr format="float" name="ucrop_aspect_ratio_x"/>
+        <attr format="float" name="ucrop_aspect_ratio_y"/>
+
+        
+        <attr format="boolean" name="ucrop_show_oval_crop_frame"/>
+        <attr format="boolean" name="ucrop_circle_dimmed_layer"/>
+        <attr format="color" name="ucrop_dimmed_color"/>
+
+        <attr format="dimension" name="ucrop_grid_stroke_size"/>
+        <attr format="color" name="ucrop_grid_color"/>
+        <attr format="integer" name="ucrop_grid_row_count"/>
+        <attr format="integer" name="ucrop_grid_column_count"/>
+        <attr format="boolean" name="ucrop_show_grid"/>
+
+        <attr format="dimension" name="ucrop_frame_stroke_size"/>
+        <attr format="color" name="ucrop_frame_color"/>
+        <attr format="boolean" name="ucrop_show_frame"/>
+
     </declare-styleable>
     <macro name="m3_comp_assist_chip_container_shape">?attr/shapeAppearanceCornerSmall</macro>
     <macro name="m3_comp_assist_chip_label_text_type">?attr/textAppearanceLabelLarge</macro>
