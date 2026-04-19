@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { fetchProfile } from '../api/roommateProfileApi';
 import {
   View,
   Text,
@@ -24,8 +25,31 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
-// Constants
-const API_BASE_URL = 'http://localhost:5000';
+// Remove unused API_BASE_URL, use API function
+// Example: Fetch profile on mount
+const [profile, setProfile] = useState<any>(null);
+const [loading, setLoading] = useState(true);
+const [error, setError] = useState<string | null>(null);
+
+useEffect(() => {
+  const loadProfile = async () => {
+    try {
+      // Replace '1' with actual userId as needed
+      const data = await fetchProfile('1');
+      setProfile(data);
+    } catch (err: any) {
+      setError('Failed to load profile');
+    } finally {
+      setLoading(false);
+    }
+  };
+  loadProfile();
+}, []);
+
+// Example usage in render:
+// if (loading) return <ActivityIndicator style={{ flex: 1 }} />;
+// if (error) return <Text>{error}</Text>;
+// <Text>{profile?.name}</Text>
 const academicYears = ['1st Year', '2nd Year', '3rd Year', '4th Year'];
 const genders = ['Male', 'Female', 'Other'];
 const roommatePrefs = [

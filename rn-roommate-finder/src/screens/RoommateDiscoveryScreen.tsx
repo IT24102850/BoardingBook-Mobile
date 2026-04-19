@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { fetchRoommates } from '../api/roommateDiscoveryApi';
 import {
   View,
   Text,
@@ -26,8 +27,7 @@ import { Picker } from '@react-native-picker/picker';
 
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
 
-// API Base URL
-const API_BASE_URL = 'http://localhost:5000';
+
 
 // Types
 interface Listing {
@@ -395,36 +395,17 @@ const SearchPage: React.FC<{ navigation: any }> = ({ navigation }) => {
     }
   };
   
-  const onRefresh = async () => {
-    setRefreshing(true);
-    await Promise.all([loadListings(), loadRoommates()]);
-    setRefreshing(false);
+  const loadRoommates = async () => {
+    setIsRoommatesLoading(true);
+    try {
+      const roommates = await fetchRoommates();
+      setDbRoommates(roommates);
+    } catch (error) {
+      console.error('Error loading roommates:', error);
+    } finally {
+      setIsRoommatesLoading(false);
+    }
   };
-  
-  const handleLike = () => {
-    if (!currentListing || isAnimating) return;
-    
-    setIsAnimating(true);
-    setDirection('right');
-    Animated.timing(pan, {
-      toValue: { x: SCREEN_WIDTH, y: 0 },
-      duration: 200,
-      useNativeDriver: true,
-    }).start(() => {
-      setLikedListings([...likedListings, currentListing]);
-      setToastMessage('Added to favorites!');
-      setShowToast(true);
-      
-      if (currentIndex < filteredListings.length - 1) {
-        setCurrentIndex(currentIndex + 1);
-      } else {
-        setCurrentIndex(filteredListings.length);
-      }
-      
-      pan.setValue({ x: 0, y: 0 });
-      setDirection(null);
-      setIsAnimating(false);
-      
       setTimeout(() => setShowToast(false), 2000);
     });
   };
