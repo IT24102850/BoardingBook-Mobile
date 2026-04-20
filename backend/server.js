@@ -1,25 +1,54 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+
+const corsOriginRaw = process.env.CORS_ORIGIN || '';
+const corsOrigins = corsOriginRaw
+  .split(',')
+  .map((origin) => origin.trim())
+  .filter(Boolean);
+
+app.use(
+  cors({
+    origin: corsOrigins.length > 0 ? corsOrigins : true,
+  }),
+);
+app.locals.mongoReady = false;
 
 // MongoDB connection
-mongoose.connect('mongodb://localhost:27017/roommatefinder', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+const mongoUri = process.env.MONGODB_URI || process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/roommatefinder';
+mongoose
+  .connect(mongoUri)
+  .then(() => {
+    app.locals.mongoReady = true;
+    console.log('Connected to MongoDB');
+  })
+  .catch((error) => {
+    app.locals.mongoReady = false;
+    console.warn('MongoDB unavailable. Booking API is running in memory mode.');
+    console.warn(error.message);
+  });
 
 const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
-db.once('open', () => {
-  console.log('Connected to MongoDB');
+db.on('error', (error) => {
+  app.locals.mongoReady = false;
+  console.warn('MongoDB connection error:');
+  console.warn(error.message);
+});
+db.on('connected', () => {
+  app.locals.mongoReady = true;
+});
+db.on('disconnected', () => {
+  app.locals.mongoReady = false;
 });
 
 // Routes
 app.use('/api/roommates', require('./routes/roommates'));
+app.use('/api/bookings', require('./routes/bookings'));
 
 // Health check
 app.get('/', (req, res) => {

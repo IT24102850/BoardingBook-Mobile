@@ -7,6 +7,7 @@ import GroupFormationScreen from './src/screens/GroupFormationScreen';
 import NotificationsScreen from './rn-roommate-finder/src/screens/NotificationsScreen';
 import TagBoardingHouseScreen from './rn-roommate-finder/src/screens/TagBoardingHouseScreen';
 import SettingsScreen from './rn-roommate-finder/src/screens/SettingsScreen';
+import BookingAgreementScreen from './booking/screens/BookingAgreementScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -19,6 +20,7 @@ const App = () => {
         <Stack.Screen name="GroupFormation" component={GroupFormationScreen} options={{ title: 'Form Group' }} />
         <Stack.Screen name="Notifications" component={NotificationsScreen} options={{ title: 'Notifications' }} />
         <Stack.Screen name="TagBoardingHouse" component={TagBoardingHouseScreen} options={{ title: 'Tag Boarding House' }} />
+        <Stack.Screen name="BookingAgreement" component={BookingAgreementScreen} options={{ title: 'Booking & Agreement' }} />
         <Stack.Screen name="Settings" component={SettingsScreen} options={{ title: 'Settings' }} />
       </Stack.Navigator>
     </NavigationContainer>
