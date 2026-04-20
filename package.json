@@ -1,26 +1,38 @@
 {
   "scripts": {
     "android": "react-native run-android",
-    "start": "react-native start"
+    "start": "react-native start",
+    "expo:android": "expo start --android --port 8085",
+    "expo:ios": "expo start --ios --port 8085",
+    "dev:expo": "node scripts/runExpoWithBackend.js",
+    "dev:expo:android": "node scripts/runExpoWithBackend.js --android",
+    "dev:expo:ios": "node scripts/runExpoWithBackend.js --ios",
+    "dev:expo:tunnel": "node scripts/runExpoWithBackend.js --tunnel",
+    "dev:expo:tunnel:android": "node scripts/runExpoWithBackend.js --tunnel --android",
+    "start:expo": "expo start --port 8085"
   },
   "devDependencies": {
+    "@expo/ngrok": "^4.1.3",
     "@react-native-community/cli": "^20.1.3",
-    "@react-native/metro-config": "^0.85.1",
-    "@types/react": "^19.2.14",
-    "@types/react-native": "^0.73.0",
+    "@types/react": "~19.1.10",
     "@types/react-native-vector-icons": "^6.4.18",
-    "react-native-cli": "^2.0.1"
+    "concurrently": "^9.2.1",
+    "metro": "^0.83.1"
   },
   "dependencies": {
     "@react-navigation/native": "^7.2.2",
     "@react-navigation/native-stack": "^7.14.11",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
+    "expo": "^54.0.0",
+    "expo-constants": "~18.0.0",
     "express": "^5.2.1",
     "mongoose": "^9.4.1",
-    "react-native": "^0.85.1",
-    "react-native-gesture-handler": "^2.16.2",
-    "react-native-safe-area-context": "^5.7.0",
-    "react-native-screens": "^4.24.0"
+    "react": "19.1.0",
+    "react-native": "0.81.5",
+    "react-native-gesture-handler": "~2.28.0",
+    "react-native-safe-area-context": "~5.6.0",
+    "react-native-screens": "~4.16.0",
+    "typescript": "~5.9.2"
   }
 }

@@ -1,8 +1,47 @@
+import Constants from 'expo-constants';
 import { Platform } from 'react-native';
 import { BookingRecord, BookingType } from '../types';
 
-const API_BASE_URL =
-  Platform.OS === 'android' ? 'http://10.0.2.2:5000/api/bookings' : 'http://localhost:5000/api/bookings';
+const DEFAULT_API_PORT = 5001;
+
+const getExpoHost = (): string | null => {
+  const expoGoConfig = (Constants as any).expoGoConfig;
+  const expoConfig = (Constants as any).expoConfig;
+  const debuggerHost = expoGoConfig?.debuggerHost;
+  const hostUri = expoConfig?.hostUri;
+  const hostSource = debuggerHost || hostUri;
+
+  if (!hostSource || typeof hostSource !== 'string') {
+    return null;
+  }
+
+  return hostSource.split(':')[0] || null;
+};
+
+const normalizeApiBaseUrl = (baseUrl: string): string => {
+  const trimmed = baseUrl.trim().replace(/\/+$/, '');
+  return trimmed.endsWith('/api/bookings') ? trimmed : `${trimmed}/api/bookings`;
+};
+
+const resolveApiBaseUrl = (): string => {
+  const envBaseUrl = (globalThis as any)?.process?.env?.EXPO_PUBLIC_API_BASE_URL;
+  if (typeof envBaseUrl === 'string' && envBaseUrl.trim()) {
+    return normalizeApiBaseUrl(envBaseUrl);
+  }
+
+  const expoHost = getExpoHost();
+  if (expoHost) {
+    return `http://${expoHost}:${DEFAULT_API_PORT}/api/bookings`;
+  }
+
+  if (Platform.OS === 'android') {
+    return `http://10.0.2.2:${DEFAULT_API_PORT}/api/bookings`;
+  }
+
+  return `http://localhost:${DEFAULT_API_PORT}/api/bookings`;
+};
+
+const API_BASE_URL = resolveApiBaseUrl();
 
 interface RequestPayload {
   bookingType: BookingType;
